@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    height: 68px;
+    height: 88px;
     border-bottom: 1px solid #deedde;
     margin-bottom: 20px;
     flex-direction: row;
@@ -14,9 +14,35 @@
     z-index: 100;
 }
 
-h1 {
+.header {
     display: flex;
-    flex-direction: column;
+    height: 77px;
+    border-bottom: 1px solid #deedde;
+    margin-bottom: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 250;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 74px;
+    margin-left: 12px;
+    margin-right: 0;
+}
+
+h1 {
+    font-weight: 700;
 }
 
 h2 {

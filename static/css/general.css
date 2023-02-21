@@ -11,3 +11,12 @@ body {
     padding-right: 24px;
     background-color: rgb(0, 54, 162);
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: blue;
+}
