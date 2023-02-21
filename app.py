@@ -30,14 +30,14 @@ def about():
     return render_template("about.html", name=name)
 
 
-@app.route('/select')
-def select_info():
+@app.route('/philosophy')
+def philosophy():
     """
-    select_info(): function that returns render template of select html
-    return: select.html: name of html file for select
+    philsophy(): function that returns render template of philosophy html
+    return: philosophy.html: name of html file for philosophy
     """
     name = "Charlemagne Marc"
-    return render_template("select.html", name=name)
+    return render_template("philosophy.html", name=name)
 
 
 @app.route('/players_expectations')
