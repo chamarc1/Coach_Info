@@ -23,7 +23,11 @@
 <body>
     <!--header-->
     <header class="header">
-        <h1>Welcome to the Coach's Website for {{name}}</h1>
+        <div class="left-section">
+            <img class="logo" src="{{url_for('static', filename='icons/sac-logo.png')}}"/>
+            <img class="logo" src="{{url_for('static', filename='icons/league-logo.jpeg')}}"/>
+        </div>
+        <h1>Coach {{name}}</h1>
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -36,37 +40,49 @@
     <!--sidebar-->
     <nav class="sidebar">
         <!--first element-->
-        <div class="sidebar-link">
-            <!--image-->
-            <img src="icons/home.svg">
-            <!--text-->
-            <div>Home</div>
-        </div>
+        <a href="/">
+            <div class="sidebar-link">
+                <!--image-->
+                <img src="{{url_for('static', filename='icons/home.png')}}"/>
+                <!--text-->
+                <div>Home</div>
+            </div>
+        </a>
         <!--next element-->
-        <div class="sidebar-link">
-            <img src="icons/explore.svg" alt="">
-            <div>about</div>
-        </div>
+        <a href="/about">
+            <div class="sidebar-link">
+                <img src="{{url_for('static', filename='icons/about.png')}}"/>
+                <div>about</div>
+            </div>
+        </a>
         <!--next element-->
-        <div class="sidebar-link">
-            <img src="icons/subscriptions.svg" alt="">
-            <div>select</div>
-        </div>
+        <a href="/select">
+            <div class="sidebar-link">
+                <img src="{{url_for('static', filename='icons/select.png')}}"/>
+                <div>select</div>
+            </div>
+        </a>
         <!--next element-->
-        <div class="sidebar-link">
-            <img src="icons/originals.svg" alt="">
-            <div>players expectations</div>
-        </div>
+        <a href="/players_expectations">
+            <div class="sidebar-link">
+                <img src="{{url_for('static', filename='icons/player.png')}}"/>
+                <div><center>players expectations</center></div>
+            </div>
+        </a>
         <!--next element-->
-        <div class="sidebar-link">
-            <img src="icons/youtube-music.svg" alt="">
-            <div>parents expectations</div>
-        </div>
+        <a href="/parents_expectations">
+            <div class="sidebar-link">
+                <img src="{{url_for('static', filename='icons/parents.png')}}"/>
+                <div><center>parents expectations</center></div>
+            </div>
+        </a>
         <!--last element-->
-        <div class="sidebar-link">
-            <img src="icons/library.svg" alt="">
-            <div>contact</div>
-        </div>
+        <a href="/contact">
+            <div class="sidebar-link">
+                <img src="{{url_for('static', filename='icons/contact.png')}}"/>
+                <div>contact</div>
+            </div>
+        </a>
     </nav>
 
     <!--main-->

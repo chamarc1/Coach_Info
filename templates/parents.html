@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--head-->
+<head>
+    <!--Metadata-->
+    <meta charset="UTF-8">
+    <meta name="author" content="Charlemagne Marc">
+    <meta name="description" content="This page contains a Coach Info site.">
+    <title>Coach Information</title>
+    <!--Link css files-->
+    <link rel="stylesheet" href="styles/general.css" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/general.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/header.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/sidebar.css')}}">
+    <!--Link Roboto font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?
+    family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!--Link icons-->
+</head>
+<!--body-->
+<body>
+    <!--header-->
+    <header class="header">
+        <div class="left-section">
+            <img class="logo" src="{{url_for('static', filename='icons/sac-logo.png')}}"/>
+            <img class="logo" src="{{url_for('static', filename='icons/league-logo.jpeg')}}"/>
+        </div>
+        <h1>Coach {{name}}</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--sidebar-->
+    <nav class="sidebar">
+        <!--first element-->
+        <a href="/">
+            <div class="sidebar-link">
+                <!--image-->
+                <img src="{{url_for('static', filename='icons/home.png')}}"/>
+                <!--text-->
+                <div>Home</div>
+            </div>
+        </a>
+        <!--next element-->
+        <a href="/about">
+            <div class="sidebar-link">
+                <img src="{{url_for('static', filename='icons/about.png')}}"/>
+                <div>about</div>
+            </div>
+        </a>
+        <!--next element-->
+        <a href="/select">
+            <div class="sidebar-link">
+                <img src="{{url_for('static', filename='icons/select.png')}}"/>
+                <div>select</div>
+            </div>
+        </a>
+        <!--next element-->
+        <a href="/players_expectations">
+            <div class="sidebar-link">
+                <img src="{{url_for('static', filename='icons/player.png')}}"/>
+                <div><center>players expectations</center></div>
+            </div>
+        </a>
+        <!--next element-->
+        <a href="/parents_expectations">
+            <div class="sidebar-link">
+                <img src="{{url_for('static', filename='icons/parents.png')}}"/>
+                <div><center>parents expectations</center></div>
+            </div>
+        </a>
+        <!--last element-->
+        <a href="/contact">
+            <div class="sidebar-link">
+                <img src="{{url_for('static', filename='icons/contact.png')}}"/>
+                <div>contact</div>
+            </div>
+        </a>
+    </nav>
+
+</body>
+</html>
