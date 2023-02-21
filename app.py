@@ -16,7 +16,10 @@ def index():
     index(): function that returns render template of index html
     return: index.html: name of html file for index
     """
-    return render_template("index.html")
+    name = "Charlemagne Marc"
+    organization = "SAC"
+    division = "Select"
+    return render_template("index.html", name=name, organization=organization, division=division)
 
 
 @app.route('/about')
