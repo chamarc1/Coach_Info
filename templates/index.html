@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--head-->
+<head>
+    <!--Metadata-->
+    <meta charset="UTF-8">
+    <meta name="author" content="Charlemagne Marc">
+    <meta name="description" content="This page contains a Coach Info site.">
+    <title>Coach Information</title>
+    <!--Link css files-->
+    <link rel="stylesheet" href="styles/general.css" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/general.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/header.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/sidebar.css')}}">
+    <!--Link Roboto font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?
+    family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!--Link icons-->
+</head>
+<!--body-->
+<body>
+    <!--header-->
+    <header class="header">
+        <h1>Welcome to the Coach's Website for {{name}}</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--sidebar-->
+    <nav class="sidebar">
+        <!--first element-->
+        <div class="sidebar-link">
+            <!--image-->
+            <img src="icons/home.svg">
+            <!--text-->
+            <div>Home</div>
+        </div>
+        <!--next element-->
+        <div class="sidebar-link">
+            <img src="icons/explore.svg" alt="">
+            <div>about</div>
+        </div>
+        <!--next element-->
+        <div class="sidebar-link">
+            <img src="icons/subscriptions.svg" alt="">
+            <div>select</div>
+        </div>
+        <!--next element-->
+        <div class="sidebar-link">
+            <img src="icons/originals.svg" alt="">
+            <div>players expectations</div>
+        </div>
+        <!--next element-->
+        <div class="sidebar-link">
+            <img src="icons/youtube-music.svg" alt="">
+            <div>parents expectations</div>
+        </div>
+        <!--last element-->
+        <div class="sidebar-link">
+            <img src="icons/library.svg" alt="">
+            <div>contact</div>
+        </div>
+    </nav>
+
+    <!--main-->
+    <main>
+        <section>
+            <h2>
+                Improve Your Soccer Skills Today
+            </h2>
+            <p>Are you looking to take your soccer skills to the next level? Our experienced soccer 
+                coach can help you reach your full potential. We offer a variety of training 
+                programs for players of all ages and skill levels. Contact us today to get 
+                started!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Coach Marc Website. All rights reserved.</p>
+    </footer>
+
+    
+
+</body>
+</html>

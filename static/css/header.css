@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    height: 68px;
+    border-bottom: 1px solid #deedde;
+    margin-bottom: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 100;
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    font-weight: 700;
+}
+
+h3 {
+    display: flex;
+    flex-direction: column;
+}
