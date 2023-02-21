@@ -35,6 +35,10 @@
     align-items: center;
 }
 
+.left-section:hover {
+    cursor: pointer;
+}
+
 .logo {
     height: 74px;
     margin-left: 12px;
