@@ -17,9 +17,7 @@ def index():
     return: index.html: name of html file for index
     """
     name = "Charlemagne Marc"
-    organization = "SAC"
-    division = "Select"
-    return render_template("index.html", name=name, organization=organization, division=division)
+    return render_template("index.html", name=name)
 
 
 @app.route('/about')
@@ -28,7 +26,8 @@ def about():
     about(): function that returns render template of about html
     return: about.html: name of html file for about
     """
-    return render_template("about.html")
+    name = "Charlemagne Marc"
+    return render_template("about.html", name=name)
 
 
 @app.route('/select')
@@ -37,7 +36,8 @@ def select_info():
     select_info(): function that returns render template of select html
     return: select.html: name of html file for select
     """
-    return render_template("select.html")
+    name = "Charlemagne Marc"
+    return render_template("select.html", name=name)
 
 
 @app.route('/players_expectations')
@@ -46,7 +46,8 @@ def players_expectations():
     players_expectations(): function that returns render template of players html
     return: players.html: name of html file for players
     """
-    return render_template("players.html")
+    name = "Charlemagne Marc"
+    return render_template("players.html", name=name)
 
 
 @app.route('/parents_expectations')
@@ -55,7 +56,8 @@ def parents_expectations():
     parents_expectations(): function that returns render template of parents html
     return: parents.html: name of html file for parents
     """
-    return render_template("parents.html")
+    name = "Charlemagne Marc"
+    return render_template("parents.html", name=name)
 
 
 @app.route('/contact')
@@ -64,7 +66,8 @@ def contact():
     contact(): function that returns render template of contact html
     return: contact.html: name of html file for contact
     """
-    return render_template("contact.html")
+    name = "Charlemagne Marc"
+    return render_template("contact.html", name=name)
 
 
 @app.route('/admin')

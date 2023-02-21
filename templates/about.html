@@ -8,10 +8,7 @@
     <meta name="description" content="This page contains a Coach Info site.">
     <title>Coach Information</title>
     <!--Link css files-->
-    <link rel="stylesheet" href="styles/general.css" type="text/css">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/general.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/header.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/sidebar.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <!--Link Roboto font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +23,8 @@
         <a href="https://www.sackick.com"><div class="left-section">
             <img class="logo" src="{{url_for('static', filename='icons/sac-logo.png')}}"/>
             <img class="logo" src="{{url_for('static', filename='icons/league-logo.jpeg')}}"/>
-        </div></a> {{name}}</h1>
+        </div></a>
+        <h1>Coach {{name}}</h1>
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -83,6 +81,40 @@
             </div>
         </a>
     </nav>
+
+    <main>
+        <section>
+            <h2>
+                Coach Information
+            </h2>
+            <div class="about-paragraph"><p class="text">
+                My name is Charlemage Marc and I am a coach for SAC (Soccer Association of Columbia)
+                . I have earned my USSF National E license. I am a product of SAC/HC's youth soccer 
+                Select program.  With addition to playing for SAC, I played for Mount Saint Joseph 
+                High School.  My goal is to pass my knowledge I learned playing down to this team. 
+                Select coaches are expected to attend and continue education courses and must apply 
+                each year to continue coaching at the Select level.  We look forward to continuing 
+                to work with our players to teach skills, tactics, teamwork, and sportsmanship.
+            </p></div>
+            <h3>
+                Select Information
+            </h3>
+            <div class="about-paragraph"><p class="text">
+                This program is for more advanced players who demonstrate a higher skill level in 
+                technical (passing, dribbling, shooting) and tactical skills (aggressiveness, field 
+                vision, positioning, and communication).  Our team will have two practices a week 
+                and players should attend all practices.  In addition to the Fall and Spring seasons
+                , we will likely play an indoor season.  All of the players on the team will play at
+                 least 50 percent of each game.  But, there will be some players who play more than 
+                 others.  This will be based on individual skill level, game conditions, player 
+                 attitude, practice attendance, and the ability to play in the positions we require.
+            </p></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Coach Marc Website. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
