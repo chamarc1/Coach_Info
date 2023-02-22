@@ -27,10 +27,15 @@
         <h1>Coach {{name}}</h1>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/services">Services</a></li>
+                <a href="https://twitter.com/charlemagne1804?ref_src=twsrc%5Etfw" 
+                class="twitter-follow-button" data-show-count="false">Follow @charlemagne1804</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+                </script>
             </ul>
+            <ul><a href="https://www.youtube.com/@Coach_Marc">
+                <img class="youtube-logo" 
+                src="{{url_for('static', filename='icons/youtube-logo.svg')}}"/>
+            </a></ul>
         </nav>
     </header>
 
@@ -53,10 +58,10 @@
             </div>
         </a>
         <!--next element-->
-        <a href="/select">
+        <a href="/philosophy">
             <div class="sidebar-link">
                 <img src="{{url_for('static', filename='icons/select.png')}}"/>
-                <div>select</div>
+                <div>philosophy</div>
             </div>
         </a>
         <!--next element-->
@@ -84,7 +89,7 @@
 
     <main>
         <section>
-            <h2>
+            <h2 class="about-paragraph">
                 Coach Information
             </h2>
             <div class="about-paragraph"><p class="text">
@@ -96,7 +101,7 @@
                 each year to continue coaching at the Select level.  We look forward to continuing 
                 to work with our players to teach skills, tactics, teamwork, and sportsmanship.
             </p></div>
-            <h3>
+            <h3 class="about-paragraph">
                 Select Information
             </h3>
             <div class="about-paragraph"><p class="text">

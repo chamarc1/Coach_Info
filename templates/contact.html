@@ -8,7 +8,7 @@
     <meta name="description" content="This page contains a Coach Info site.">
     <title>Coach Information</title>
     <!--Link css files-->
-    <link rel="stylesheet" href="styles/style.css" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <!--Link Roboto font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,10 +27,15 @@
         <h1>Coach {{name}}</h1>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/services">Services</a></li>
+                <a href="https://twitter.com/charlemagne1804?ref_src=twsrc%5Etfw" 
+                class="twitter-follow-button" data-show-count="false">Follow @charlemagne1804</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+                </script>
             </ul>
+            <ul><a href="https://www.youtube.com/@Coach_Marc">
+                <img class="youtube-logo" 
+                src="{{url_for('static', filename='icons/youtube-logo.svg')}}"/>
+            </a></ul>
         </nav>
     </header>
 
@@ -103,6 +108,10 @@
             </form>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2023 Coach Marc Website. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>

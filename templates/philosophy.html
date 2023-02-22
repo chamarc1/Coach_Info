@@ -8,7 +8,7 @@
     <meta name="description" content="This page contains a Coach Info site.">
     <title>Coach Information</title>
     <!--Link css files-->
-    <link rel="stylesheet" href="styles/style.css" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <!--Link Roboto font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,10 +27,15 @@
         <h1>Coach {{name}}</h1>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/services">Services</a></li>
+                <a href="https://twitter.com/charlemagne1804?ref_src=twsrc%5Etfw" 
+                class="twitter-follow-button" data-show-count="false">Follow @charlemagne1804</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+                </script>
             </ul>
+            <ul><a href="https://www.youtube.com/@Coach_Marc">
+                <img class="youtube-logo" 
+                src="{{url_for('static', filename='icons/youtube-logo.svg')}}"/>
+            </a></ul>
         </nav>
     </header>
 
@@ -81,6 +86,32 @@
             </div>
         </a>
     </nav>
+
+    <!--main-->
+    <main>
+        <section>
+            <h2 class="about-paragraph">
+                Coaching Philosophy
+            </h2>
+            <h3>
+                9v9
+            </h3>
+            <div class="about-paragraph"><p class="text">
+                &#x2022;&#9; My coaching principles stresses fluidity. Meaning players are expected 
+                to play in different positions: defense transitioning to attack and attack 
+                transitioning to defense.
+                <br>&#x2022;&#9;In the Fall we played a 4-3-1 (4 defenders, 3 midfielders, 1 forward
+                ) that transitioned into a 2-3-3 (2 defenders, 3 midfielders, 3 in attack).               
+            </p></div>
+            <h3>
+                11v11
+            </h3>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Coach Marc Website. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
