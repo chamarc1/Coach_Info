@@ -7,8 +7,19 @@ Lab Week 6
 Purpose: Python program that allows a user to load Flask website regarding a Soccer Coach
 """
 from flask import Flask, redirect, render_template, url_for
+from datetime import datetime
 
 app = Flask(__name__)
+
+def get_date():
+    """
+    get_date(): function that returns the current date (Month Day, Year)
+    """
+    # get current date
+    today = datetime.today()
+    date = today.strftime("%B %d, %Y")
+
+    return date
 
 @app.route("/")
 def index():
@@ -17,7 +28,8 @@ def index():
     return: index.html: name of html file for index
     """
     name = "Charlemagne Marc"
-    return render_template("index.html", name=name)
+    date = get_date()
+    return render_template("index.html", name=name, date=date)
 
 
 @app.route('/about')

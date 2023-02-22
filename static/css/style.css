@@ -1,4 +1,4 @@
-/**
+ /**
 SDEV 300
 Author: Charlemagne Marc
 File: style.css
@@ -244,4 +244,17 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: rgb(0, 235, 235);
+}
+
+/*Date*/
+.date {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    background-color: white;
+    font-size: 18px;
+    font-family: Roboto, Arial;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
 }
