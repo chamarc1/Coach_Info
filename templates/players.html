@@ -8,7 +8,7 @@
     <meta name="description" content="This page contains a Coach Info site.">
     <title>Coach Information</title>
     <!--Link css files-->
-    <link rel="stylesheet" href="styles/style.css" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <!--Link Roboto font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,10 +27,15 @@
         <h1>Coach {{name}}</h1>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/services">Services</a></li>
+                <a href="https://twitter.com/charlemagne1804?ref_src=twsrc%5Etfw" 
+                class="twitter-follow-button" data-show-count="false">Follow @charlemagne1804</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+                </script>
             </ul>
+            <ul><a href="https://www.youtube.com/@Coach_Marc">
+                <img class="youtube-logo" 
+                src="{{url_for('static', filename='icons/youtube-logo.svg')}}"/>
+            </a></ul>
         </nav>
     </header>
 
@@ -82,5 +87,28 @@
         </a>
     </nav>
 
+    <!--main-->
+    <main>
+        <section>
+            <h2 class="about-paragraph">
+                Expectations of Players
+            </h2>
+            <div class="about-paragraph"><p class="text">
+                &#x2022;&#9;Play hard & be prepared.<br>&#x2022;&#9;Be at practice on time and ready
+                 to work hard. Bring a serious attitude to practice. We will have fun, but a player 
+                who is fooling around takes away from the team.<br>&#x2022;&#9;When on the sideline 
+                during a game, players should support their teammates. Players should not “beg” to 
+                get in the game or to play a particular position.<br>&#x2022;&#9;Be a good teammate.
+                 Everyone will make mistakes during the season – it happens.  Encourage teammates; 
+                do not give them a hard time if they make an error.<br>&#x2022;&#9;Finally, always, 
+                always, always demonstrate GOOD SPORTSMANSHIP.  
+            </p></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Coach Marc Website. All rights reserved.</p>
+    </footer>
+    
 </body>
 </html>
