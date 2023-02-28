@@ -51,12 +51,21 @@
     <!--sidebar-->
     <nav class="sidebar">
         <!--first element-->
-        <a href="/home">
+        <a href="/">
             <div class="sidebar-link">
                 <!--image-->
                 <img src="{{url_for('static', filename='icons/home.png')}}"/>
                 <!--text-->
                 <div>Home</div>
+            </div>
+        </a>
+        <!--next element-->
+        <a href="/roster">
+            <div class="sidebar-link">
+                <!--image-->
+                <img src="{{url_for('static', filename='icons/roster.png')}}"/>
+                <!--text-->
+                <div>Roster</div>
             </div>
         </a>
         <!--next element-->
@@ -87,11 +96,20 @@
                 <div><center>parents expectations</center></div>
             </div>
         </a>
-        <!--last element-->
+        <!--next element-->
         <a href="/contact">
             <div class="sidebar-link">
                 <img src="{{url_for('static', filename='icons/contact.png')}}"/>
                 <div>contact</div>
+            </div>
+        </a>
+        <!--last element-->
+        <a href="/logout">
+            <div class="sidebar-link">
+                <!--image-->
+                <img src="{{url_for('static', filename='icons/logout.png')}}"/>
+                <!--text-->
+                <div>Logout</div>
             </div>
         </a>
     </nav>
