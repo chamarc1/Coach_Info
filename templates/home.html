@@ -1,4 +1,4 @@
-<!--parents.html by Charlemagne Marc-->
+<!--index.html by Charlemagne Marc-->
 <!DOCTYPE html>
 <html lang="en-US">
 <!-- The head section begins here -->
@@ -99,31 +99,62 @@
     <!--main-->
     <main>
         <section>
-            <h2 class="about-paragraph">
-                Expectations of Parents
+            <h2>
+                Improve Your Soccer Skills Today
             </h2>
-            <div class="about-paragraph"><p class="text"><ol>
-                <li>Be positive with your son, the other players on the team, parents, coaches, the 
-                    referees, and the teams we play. It will make it more fun for everyone.</li>
-                <li>Please get your son to practice and games on time.</li>
-                <li>If your son is going to miss a practice or a game, let the coaches 
-                    know in advance.</li>
-                <li>Referees will make mistakes – sometimes bad mistakes. It happens. 
-                    We expect parents to take these in stride. SAC does not tolerate referee abuse, 
-                    and as coaches we fully support this policy.</li> 
-                <li>Finally, if you have a question or issue with the way Umaru and I coach, please 
-                    bring it to us directly.  We want to avoid having a player who won’t listen 
-                    because his parents disagree with the coaching and complain about the coaches in
-                     front of their son. Your son will pick up on this and will be less likely to 
-                    feel a part of the team.  This serves no real purpose and can be very 
-                    disruptive.</li>
-            </ol></p></div>
+            <!--photo grid-->
+            <section class="photo-grid">
+                <!--video preview in each grid-->
+                <div class="photo-preview">
+                    <div class="thumbnail-row">
+                        <img class="thumbnail" src="{{url_for('static', 
+                        filename='thumbnails/thumbnail-1.jpeg')}}"/>
+                    </div>
+                </div>
+    
+                <div class="photo-preview">
+                    <div class="thumbnail-row">
+                        <img class="thumbnail" src="{{url_for('static', 
+                        filename='thumbnails/thumbnail-2.jpeg')}}"/>
+                    </div>
+                </div>
+    
+                <div class="photo-preview">
+                    <div class="thumbnail-row">
+                        <img class="thumbnail" src="{{url_for('static', 
+                        filename='thumbnails/thumbnail-3.jpeg')}}"/>
+                    </div>
+                </div>
+    
+                <div class="photo-preview">
+                    <div class="thumbnail-row">
+                        <img class="thumbnail" src="{{url_for('static', 
+                        filename='thumbnails/thumbnail-4.jpeg')}}"/>
+                    </div>
+                </div>
+    
+                <div class="photo-preview">
+                    <div class="thumbnail-row">
+                        <img class="thumbnail" src="{{url_for('static', 
+                        filename='thumbnails/thumbnail-5.jpeg')}}"/>
+                    </div>
+                </div>
+    
+                <div class="photo-preview">
+                    <div class="thumbnail-row">
+                        <img class="thumbnail" src="{{url_for('static', 
+                        filename='thumbnails/thumbnail-6.jpeg')}}"/>
+                    </div>
+                </div>
+            </section>
+            <!--date-->
+            <div class="date">{{ date }}</div>
         </section>
     </main>
 
+    <!--footer-->
     <footer>
         <p>&copy; 2023 Coach Marc Website. All rights reserved.</p>
     </footer>
-
 </body>
 </html>

@@ -32,6 +32,17 @@ def index():
     return render_template("index.html", name=name, date=date)
 
 
+@app.route('/home')
+def home():
+    """
+    home(): function that returns render template of home html
+    return: home.html: name of html file for home
+    """
+    name = "Charlemagne Marc"
+    date = get_date()
+    return render_template("home.html", name=name, date=date)
+
+
 @app.route('/about')
 def about():
     """
