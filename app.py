@@ -163,6 +163,17 @@ def logout():
     return redirect('/login')
 
 
+@app.route('/roster')
+def roster():
+    name = "Charlemagne Marc"
+    # check if user is logged in
+    if 'user_id' in session:
+        user_id = session['user_id']
+        return render_template("roster.html", name=name, user_id=user_id)
+    # if user is not logged in, redirect to login page
+    return redirect('/login')
+
+
 @app.route('/about')
 def about():
     """
@@ -170,7 +181,12 @@ def about():
     return: about.html: name of html file for about
     """
     name = "Charlemagne Marc"
-    return render_template("about.html", name=name)
+    # check if user is logged in
+    if 'user_id' in session:
+        user_id = session['user_id']
+        return render_template("about.html", name=name, user_id=user_id)
+    # if user is not logged in, redirect to login page
+    return redirect('/login')
 
 
 @app.route('/philosophy')
@@ -180,7 +196,12 @@ def philosophy():
     return: philosophy.html: name of html file for philosophy
     """
     name = "Charlemagne Marc"
-    return render_template("philosophy.html", name=name)
+    # check if user is logged in
+    if 'user_id' in session:
+        user_id = session['user_id']
+        return render_template("philosophy.html", name=name, user_id=user_id)
+    # if user is not logged in, redirect to login page
+    return redirect('/login')
 
 
 @app.route('/players_expectations')
@@ -190,7 +211,12 @@ def players_expectations():
     return: players.html: name of html file for players
     """
     name = "Charlemagne Marc"
-    return render_template("players.html", name=name)
+    # check if user is logged in
+    if 'user_id' in session:
+        user_id = session['user_id']
+        return render_template("players.html", name=name, user_id=user_id)
+    # if user is not logged in, redirect to login page
+    return redirect('/login')
 
 
 @app.route('/parents_expectations')
@@ -200,7 +226,12 @@ def parents_expectations():
     return: parents.html: name of html file for parents
     """
     name = "Charlemagne Marc"
-    return render_template("parents.html", name=name)
+    # check if user is logged in
+    if 'user_id' in session:
+        user_id = session['user_id']
+        return render_template("parents.html", name=name, user_id=user_id)
+    # if user is not logged in, redirect to login page
+    return redirect('/login')
 
 
 @app.route('/contact')
@@ -210,7 +241,12 @@ def contact():
     return: contact.html: name of html file for contact
     """
     name = "Charlemagne Marc"
-    return render_template("contact.html", name=name)
+    # check if user is logged in
+    if 'user_id' in session:
+        user_id = session['user_id']
+        return render_template("contact.html", name=name, user_id=user_id)
+    # if user is not logged in, redirect to login page
+    return redirect('/login')
 
 
 @app.route('/admin')
