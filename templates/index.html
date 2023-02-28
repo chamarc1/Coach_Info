@@ -9,7 +9,8 @@
     <meta name="description" content="This page contains a Coach Info site.">
     <title>Coach Information</title>
     <!-- Link to css files -->
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/header.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
     <!-- Link to Roboto font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,114 +49,38 @@
         </nav>
     </header>
 
-    <!--sidebar-->
-    <nav class="sidebar">
-        <!--first element-->
-        <a href="/">
-            <div class="sidebar-link">
-                <!--image-->
-                <img src="{{url_for('static', filename='icons/home.png')}}"/>
-                <!--text-->
-                <div>Home</div>
-            </div>
-        </a>
-        <!--next element-->
-        <a href="/about">
-            <div class="sidebar-link">
-                <img src="{{url_for('static', filename='icons/about.png')}}"/>
-                <div>about</div>
-            </div>
-        </a>
-        <!--next element-->
-        <a href="/philosophy">
-            <div class="sidebar-link">
-                <img src="{{url_for('static', filename='icons/select.png')}}"/>
-                <div>philosophy</div>
-            </div>
-        </a>
-        <!--next element-->
-        <a href="/players_expectations">
-            <div class="sidebar-link">
-                <img src="{{url_for('static', filename='icons/player.png')}}"/>
-                <div><center>players expectations</center></div>
-            </div>
-        </a>
-        <!--next element-->
-        <a href="/parents_expectations">
-            <div class="sidebar-link">
-                <img src="{{url_for('static', filename='icons/parents.png')}}"/>
-                <div><center>parents expectations</center></div>
-            </div>
-        </a>
-        <!--last element-->
-        <a href="/contact">
-            <div class="sidebar-link">
-                <img src="{{url_for('static', filename='icons/contact.png')}}"/>
-                <div>contact</div>
-            </div>
-        </a>
-    </nav>
-
-    <!--main-->
-    <main>
-        <section>
-            <h2>
-                Improve Your Soccer Skills Today
-            </h2>
-            <!--photo grid-->
-            <section class="photo-grid">
-                <!--video preview in each grid-->
-                <div class="photo-preview">
-                    <div class="thumbnail-row">
-                        <img class="thumbnail" src="{{url_for('static', 
-                        filename='thumbnails/thumbnail-1.jpeg')}}"/>
+    <section class="login-section">
+        <div class="form-box">
+                <form action="">
+                    <h2 class="login-header">Login</h2>
+                    <div class="input-box">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" required>
+                        <label for="">Email</label>
                     </div>
-                </div>
-    
-                <div class="photo-preview">
-                    <div class="thumbnail-row">
-                        <img class="thumbnail" src="{{url_for('static', 
-                        filename='thumbnails/thumbnail-2.jpeg')}}"/>
+                    <div class="input-box">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" required>
+                        <label for="">Password</label>
                     </div>
-                </div>
-    
-                <div class="photo-preview">
-                    <div class="thumbnail-row">
-                        <img class="thumbnail" src="{{url_for('static', 
-                        filename='thumbnails/thumbnail-3.jpeg')}}"/>
+                    <div class="forget">
+                        <label for="">
+                            <input type="checkbox">Remember Me <a href="#">Forget Password</a>
+                        </label>
                     </div>
-                </div>
-    
-                <div class="photo-preview">
-                    <div class="thumbnail-row">
-                        <img class="thumbnail" src="{{url_for('static', 
-                        filename='thumbnails/thumbnail-4.jpeg')}}"/>
+                    <button class="login-button">Log in</button>
+                    <div class="register">
+                        <p>Don't have an account? <a href="#">Register</a></p>
                     </div>
-                </div>
-    
-                <div class="photo-preview">
-                    <div class="thumbnail-row">
-                        <img class="thumbnail" src="{{url_for('static', 
-                        filename='thumbnails/thumbnail-5.jpeg')}}"/>
-                    </div>
-                </div>
-    
-                <div class="photo-preview">
-                    <div class="thumbnail-row">
-                        <img class="thumbnail" src="{{url_for('static', 
-                        filename='thumbnails/thumbnail-6.jpeg')}}"/>
-                    </div>
-                </div>
-            </section>
-            <!--date-->
-            <div class="date">{{ date }}</div>
-        </section>
-    </main>
+                </form>
+        </div>
+    </section>
 
     <!--footer-->
     <footer>
         <p>&copy; 2023 Coach Marc Website. All rights reserved.</p>
     </footer>
-
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
