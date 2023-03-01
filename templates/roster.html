@@ -1,0 +1,240 @@
+<!--roster.html by Charlemagne Marc-->
+<!DOCTYPE html>
+<html lang="en-US">
+<!-- The head section begins here -->
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="author" content="Charlemagne Marc">
+    <meta name="description" content="This page contains a Coach Info site.">
+    <title>Coach Information</title>
+    <!-- Link to css files -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <!-- Link to Roboto font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" 
+    rel="stylesheet">
+    <!-- Link to icons -->
+</head>
+<!-- The head section ends here -->
+<!-- The body section starts hear-->
+<body>
+    <!--header-->
+    <header class="header">
+        <!--Left section with logos-->
+        <a href="https://www.sackick.com"><div class="left-section">
+            <img class="logo" src="{{url_for('static', filename='icons/sac-logo.png')}}"/>
+            <img class="logo" src="{{url_for('static', filename='icons/league-logo.jpeg')}}"/>
+        </div></a>
+        <!--Title section with coach name-->
+        <h1>Coach {{name}}</h1>
+        <!--Navigation section with social media links-->
+        <nav>
+            <ul>
+                <!--Twitter follow button-->
+                <a href="https://twitter.com/charlemagne1804?ref_src=twsrc%5Etfw" 
+                class="twitter-follow-button" data-show-count="false">Follow @charlemagne1804</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+                </script>
+            </ul>
+            <ul>
+                <!--YouTube logo link-->
+                <a href="https://www.youtube.com/@Coach_Marc">
+                    <img class="youtube-logo" 
+                    src="{{url_for('static', filename='icons/youtube-logo.svg')}}"/>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <!--sidebar-->
+    <nav class="sidebar">
+        <!--first element-->
+        <a href="/">
+            <div class="sidebar-link">
+                <!--image-->
+                <img src="{{url_for('static', filename='icons/home.png')}}"/>
+                <!--text-->
+                <div>Home</div>
+            </div>
+        </a>
+        <!--next element-->
+        <a href="/roster">
+            <div class="sidebar-link">
+                <!--image-->
+                <img src="{{url_for('static', filename='icons/roster.png')}}"/>
+                <!--text-->
+                <div>Roster</div>
+            </div>
+        </a>
+        <!--next element-->
+        <a href="/about">
+            <div class="sidebar-link">
+                <img src="{{url_for('static', filename='icons/about.png')}}"/>
+                <div>about</div>
+            </div>
+        </a>
+        <!--next element-->
+        <a href="/philosophy">
+            <div class="sidebar-link">
+                <img src="{{url_for('static', filename='icons/select.png')}}"/>
+                <div>philosophy</div>
+            </div>
+        </a>
+        <!--next element-->
+        <a href="/players_expectations">
+            <div class="sidebar-link">
+                <img src="{{url_for('static', filename='icons/player.png')}}"/>
+                <div><center>players expectations</center></div>
+            </div>
+        </a>
+        <!--next element-->
+        <a href="/parents_expectations">
+            <div class="sidebar-link">
+                <img src="{{url_for('static', filename='icons/parents.png')}}"/>
+                <div><center>parents expectations</center></div>
+            </div>
+        </a>
+        <!--next element-->
+        <a href="/contact">
+            <div class="sidebar-link">
+                <img src="{{url_for('static', filename='icons/contact.png')}}"/>
+                <div>contact</div>
+            </div>
+        </a>
+        <!--last element-->
+        <a href="/logout">
+            <div class="sidebar-link">
+                <!--image-->
+                <img src="{{url_for('static', filename='icons/logout.png')}}"/>
+                <!--text-->
+                <div>Logout</div>
+            </div>
+        </a>
+    </nav>
+
+    <!--main-->
+    <main>
+        <section>
+            <h2>
+                Current Roster: Select Boys 2010
+            </h2>
+            
+            <section class="photo-grid">
+                <table border="1" class="statistics-table">
+                        <tr>
+                            <th class="name">Name</th>
+                            <th>Position</th>
+                            <th>Goals</th>
+                            <th>Assists</th>
+                            <th>Tackles Won</th>
+                        </tr>
+                        <tr>
+                            <td>Aryan Sarlak</td>
+                            <td>Midfield</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>Birol Ozdem</td>
+                            <td>Midfield</td>
+                            <td>8</td>
+                            <td>6</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>Cody Miller-Mercer</td>
+                            <td>Midfield</td>
+                            <td>2</td>
+                            <td>6</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>Zai Glenn</td>
+                            <td>Midfield</td>
+                            <td>1</td>
+                            <td>4</td>
+                            <td>58</td>
+                        </tr>
+                        <tr>
+                            <td>Ishan Raj</td>
+                            <td>Forward</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>Jaden Cole</td>
+                            <td>Midfield</td>
+                            <td>7</td>
+                            <td>11</td>
+                            <td>63</td>
+                        </tr>
+                        <tr>
+                            <td>Johann Joby</td>
+                            <td>Defender</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>38</td>
+                        </tr>
+                        <tr>
+                            <td>Jon Parker</td>
+                            <td>Forward</td>
+                            <td>12</td>
+                            <td>4</td>
+                            <td>26</td>
+                        </tr>
+                        <tr>
+                            <td>Judah Kahn</td>
+                            <td>Defender</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>41</td>
+                        </tr>
+                        <tr>
+                            <td>Nicholas Moreno</td>
+                            <td>Midfield</td>
+                            <td>15</td>
+                            <td>8</td>
+                            <td>29</td>
+                        </tr>
+                        <tr>
+                            <td>Patrick Pezan</td>
+                            <td>Forward</td>
+                            <td>9</td>
+                            <td>3</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>Rayan Mohammed</td>
+                            <td>Defender</td>
+                            <td>0</td>
+                            <td>3</td>
+                            <td>63</td>
+                        </tr>
+                        <tr>
+                            <td>Sriram Parimi</td>
+                            <td>Forward</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>32</td>
+                        </tr>
+                        <caption>
+                            <details>
+                                <summary>Vital Statistics</summary>
+                                <p>This table includes the season total stats of the roster.</p>
+                            </details>
+                        </caption>
+                    </table>
+            </section>
+        </section>
+    </main>
+
+    <!--footer-->
+    <footer>
+        <p>&copy; 2023 Coach Marc Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

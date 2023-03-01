@@ -17,8 +17,11 @@ app = Flask(__name__)
 # set up session secret key
 app.secret_key = 'super secret key'
 
-# define database connection function
 def get_db():
+    """
+    get_db(): creates database connection and table
+    return: conn: database connection
+    """
     conn = sqlite3.connect('users.db')
 
     # create a cursor object to execute SQL commands
@@ -35,6 +38,7 @@ def get_db():
 
     return conn
 
+
 def get_date():
     """
     get_date(): function that returns the current date (Month Day, Year)
@@ -44,6 +48,7 @@ def get_date():
     date = today.strftime("%B %d, %Y")
 
     return date
+
 
 @app.route("/")
 def index():
@@ -61,9 +66,12 @@ def index():
     return redirect('/login')
 
 
-# login page route
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    """
+    login(): login page route
+    return: render_template: login.html, name
+    """
     name = "Charlemagne Marc"
     # check if user is already logged in
     if 'user_id' in session:
@@ -95,8 +103,10 @@ def login():
 
 def valid_password(password):
     """
+    valid_password(password): checks to see if string is a valid password
     A password complexity should be enforced to include at least 12 characters in length, and
     include at least 1 uppercase character, 1 lowercase character, 1 number and 1 special character.
+    return: boolean: boolean on validicity of password
     """
     # check for length
     if len(password) < 12:
@@ -122,9 +132,12 @@ def valid_password(password):
     return True
 
 
-# registration page route
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    """
+    register(): registration page route
+    return: page route based on conditions
+    """
     name = "Charlemagne Marc"
     # check if user is already logged in
     if 'user_id' in session:
@@ -154,9 +167,12 @@ def register():
     return render_template('registration.html', name=name)
 
 
-# logout route
 @app.route('/logout')
 def logout():
+    """
+    logout(): logout page route
+    return: redirect: to login page
+    """
     # remove user ID from session
     session.pop('user_id', None)
     # redirect to login page
@@ -165,6 +181,10 @@ def logout():
 
 @app.route('/roster')
 def roster():
+    """
+    roster(): roster page route
+    return: render template: roster.html or redirect to login page
+    """
     name = "Charlemagne Marc"
     # check if user is logged in
     if 'user_id' in session:
@@ -258,5 +278,6 @@ def admin():
     return redirect((url_for("index")))
 
 
+# run app
 if __name__ == "__main__":
     app.run(debug=True)
