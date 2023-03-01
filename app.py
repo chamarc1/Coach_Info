@@ -6,10 +6,11 @@ Date: 02/20/2023
 Lab Week 6
 Purpose: Python program that allows a user to load Flask website regarding a Soccer Coach
 """
-from flask import Flask, render_template, request, session, redirect, url_for
-import sqlite3, re
-from werkzeug.security import check_password_hash, generate_password_hash
+import sqlite3
+import re
 from datetime import datetime
+from flask import Flask, render_template, request, session, redirect, url_for
+from werkzeug.security import check_password_hash, generate_password_hash
 
 # initialize Flask app
 app = Flask(__name__)
@@ -32,7 +33,7 @@ def get_db():
                 (id INTEGER PRIMARY KEY AUTOINCREMENT,
                 username TEXT NOT NULL UNIQUE,
                 password_hash TEXT NOT NULL);""")
-    
+
     # commit changes to the database
     conn.commit()
 
@@ -93,10 +94,9 @@ def login():
             session['user_id'] = user[0]
             # redirect to home page
             return redirect('/')
-        else:
-            # display error message
-            error = 'Invalid username or password'
-            return render_template('login.html', error=error, name=name)
+        # display error message
+        error = 'Invalid username or password'
+        return render_template('login.html', error=error, name=name)
     # if form is not submitted, display login page
     return render_template('login.html', name=name)
 
@@ -121,7 +121,7 @@ def valid_password(password):
         print("no lower")
         return False
     # check for digit
-    if not re.search("\d", password):
+    if not re.search(r"\d", password):
         print("no digit")
         return False
     # check for special
