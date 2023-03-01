@@ -8,6 +8,7 @@ Purpose: Python program that allows a user to load Flask website regarding a Soc
 """
 import sqlite3
 import re
+import secrets
 from datetime import datetime
 from flask import Flask, render_template, request, session, redirect, url_for
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -15,8 +16,9 @@ from werkzeug.security import check_password_hash, generate_password_hash
 # initialize Flask app
 app = Flask(__name__)
 
-# set up session secret key
-app.secret_key = 'super secret key'
+# generate a secure random secret key
+secret_key = secrets.token_hex(16) # 16 bytes = 128 bits
+app.secret_key = secret_key
 
 def get_db():
     """
@@ -280,4 +282,4 @@ def admin():
 
 # run app
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

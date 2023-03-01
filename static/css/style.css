@@ -259,3 +259,9 @@ input[type="submit"]:hover {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
 }
+
+/*Roster*/
+td {
+    text-align: center;
+    vertical-align: middle;
+}
