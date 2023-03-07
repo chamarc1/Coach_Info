@@ -103,6 +103,28 @@ def login():
     return render_template('login.html', name=name)
 
 
+def common(password):
+    """
+    common(password): checks parameter against a file to see if it's in the file
+    param: password: String
+    return: Boolean: False if password's not in file, True if it is in file
+    """
+    # open file
+    file = open('CommonPassword.txt', 'r')
+    
+    # for loop to iterate through each line in file
+    for line in file:
+        # check line against password, return True if password equals line
+        if line.strip() == password:
+            return True
+        
+    # close file
+    file.close()
+
+    # return False since password is not within common list
+    return False
+
+
 def valid_password(password):
     """
     valid_password(password): checks to see if string is a valid password
@@ -110,26 +132,24 @@ def valid_password(password):
     include at least 1 uppercase character, 1 lowercase character, 1 number and 1 special character.
     return: boolean: boolean on validicity of password
     """
+    # check for common
+    if common(password):
+        return False, "easily guessed"
     # check for length
     if len(password) < 12:
-        print("check length")
-        return False
+        return False, "too short"
     # check for upper
     if not re.search(r"[A-Z]", password):
-        print("no upper")
-        return False
+        return False, "no uppercase characters"
     # check for lower
     if not re.search(r"[a-z]", password):
-        print("no lower")
-        return False
+        return False, "no lowercase characters"
     # check for digit
     if not re.search(r"\d", password):
-        print("no digit")
-        return False
+        return False, "no digits"
     # check for special
     if not re.search(r"[@_!#$%^&*()<>?/|}{~:]", password):
-        print("no special")
-        return False
+        return False, "no special characters"
     # return True since passes all conditions
     return True
 
@@ -150,9 +170,10 @@ def register():
         username = request.form['username']
         password = request.form['password']
         # if password is not valid error message and redirect to registration
-        if not valid_password(password):
+        valid = valid_password(password)
+        if not valid[0]:
             # display error message
-            error = 'Invalid password.'
+            error = 'password: ' + valid[1]
             return render_template('registration.html', error=error, name=name)
         # generate password hash
         password_hash = generate_password_hash(password)
