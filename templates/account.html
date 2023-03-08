@@ -1,4 +1,4 @@
-<!--players.html by Charlemagne Marc-->
+<!--about.html by Charlemagne Marc-->
 <!DOCTYPE html>
 <html lang="en-US">
 <!-- The head section begins here -->
@@ -9,7 +9,9 @@
     <meta name="description" content="This page contains a Coach Info site.">
     <title>Coach Information</title>
     <!-- Link to css files -->
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/sidebar.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/header.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
     <!-- Link to Roboto font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,30 +123,41 @@
         </a>
     </nav>
 
-    <!--main-->
     <main>
-        <section>
-            <h2 class="about-paragraph">
-                Expectations of Players
-            </h2>
-            <div class="about-paragraph"><p class="text"><ol>
-                <li>Play hard & be prepared.</li>
-                <li>Be at practice on time and ready to work hard. Bring a serious attitude to 
-                    practice. We will have fun, but a player who is fooling around takes away from 
-                    the team.</li>
-                <li>When on the sideline 
-                during a game, players should support their teammates. Players should not “beg” to 
-                get in the game or to play a particular position.</li>
-                <li>Be a good teammate. Everyone will make mistakes during the season – it happens. 
-                    Encourage teammates; do not give them a hard time if they make an error.</li>
-                <li>Finally, always, always, always demonstrate GOOD SPORTSMANSHIP.</li>
-            </ol></p></div>
+        <section class="login-section">
+            <div class="form-box">
+                <form action="{{ url_for('account') }}" method="POST">
+                    <h2 class="login-header">Password Change</h2>
+                    {% if error %}
+                        <p style="color:red">{{ error }}</p>
+                    {% endif %}
+                    {% if success %}
+                        <p style="color:blue">{{ success }}</p>
+                    {% endif %}
+                    <div class="input-box">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name="current_password" required>
+                        <label for="">Current Password</label>
+                    </div>
+                    <div class="input-box">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name="new_password" required>
+                        <label for="">New Password</label>
+                    </div>
+                    <div class="input-box">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name="confirm_password" required>
+                        <label for="">Confirm Password</label>
+                    </div>
+                    <button class="login-button"  type="submit">Change Password</button>
+                </form>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2023 Coach Marc Website. All rights reserved.</p>
     </footer>
-    
+
 </body>
 </html>

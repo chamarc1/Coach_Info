@@ -190,6 +190,50 @@ def register():
     return render_template('registration.html', name=name)
 
 
+@app.route('/account', methods=['GET', 'POST'])
+def account():
+    name = 'Charlemagne Marc'
+    # check if user is logged in
+    if 'user_id' not in session:
+        return redirect('/login')
+    user_id = session['user_id']
+    # if form is submitted, update password in database
+    if request.method == 'POST':
+        # get input values
+        current_password = request.form['current_password']
+        new_password = request.form['new_password']
+        confirm_password = request.form['confirm_password']
+        # connect to database
+        conn = get_db()
+        cur = conn.cursor()
+        # execute query to get user with given ID
+        cur.execute('SELECT * FROM users WHERE id = ?', (session['user_id'],))
+        user = cur.fetchone()
+        # check if current password is correct
+        if not check_password_hash(user[2], current_password):
+            error = 'not current password'
+            return render_template('account.html', error=error, name=name, user_id=user_id)
+        # check if new password equals confirm password
+        if not new_password == confirm_password:
+            error = 'new and confirm passwords do not match'
+            return render_template('account.html', error=error, name=name, user_id=user_id)
+        # check to see if new password is valid
+        valid = valid_password(new_password)
+        if not valid[0]:
+            # display error message
+            error = 'password: ' + valid[1]
+            return render_template('account.html', error=error, name=name, user_id=user_id)
+        # update password hash in database
+        cur.execute('UPDATE users SET password_hash = ? WHERE id = ?',
+                    (generate_password_hash(new_password), session['user_id']))
+        conn.commit()
+        # display success message
+        success = 'Password updated successfully'
+        return render_template('account.html', success=success, name=name, user_id=user_id)
+    # if form is not submitted, display base account page
+    return render_template('account.html', name=name, user_id=user_id)
+        
+
 @app.route('/logout')
 def logout():
     """
@@ -303,4 +347,4 @@ def admin():
 
 # run app
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
