@@ -9,6 +9,7 @@ Purpose: Python program that allows a user to load Flask website regarding a Soc
 import sqlite3
 import re
 import secrets
+import logging
 from datetime import datetime
 from flask import Flask, render_template, request, session, redirect, url_for
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -75,7 +76,9 @@ def login():
     login(): login page route
     return: render_template: login.html, name
     """
-    name = "Charlemagne Marc"
+    name = "Charlemagne Marc"# set up logging
+    logging.basicConfig(filename='failed_logins.log', level=logging.INFO,
+                        format='%(asctime)s - %(levelname)s - %(message)s')
     # check if user is already logged in
     if 'user_id' in session:
         return redirect('/')
@@ -98,7 +101,10 @@ def login():
             return redirect('/')
         # display error message
         error = 'Invalid username or password'
-        return render_template('login.html', error=error, name=name)
+        # log failed login attempt with date and time
+        logging.info(f'Failed login attempt at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}'\
+                     f' from IP address {request.remote_addr}')
+        return render_template('login.html', error=error)
     # if form is not submitted, display login page
     return render_template('login.html', name=name)
 

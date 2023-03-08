@@ -41,3 +41,12 @@ Purpose: css style file for the accompanying index.html
     font-size: 10px;
     font-weight: 400;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: blue;
+}
