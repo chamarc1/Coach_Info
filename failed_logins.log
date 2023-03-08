@@ -1,8 +1,26 @@
-2023-03-07 19:58:15,078 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "GET /login HTTP/1.1" 200 -
-2023-03-07 19:58:15,104 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "[36mGET /static/css/header.css HTTP/1.1[0m" 304 -
-2023-03-07 19:58:15,104 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
-2023-03-07 19:58:15,104 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "[36mGET /static/icons/youtube-logo.svg HTTP/1.1[0m" 304 -
-2023-03-07 19:58:15,104 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "[36mGET /static/icons/league-logo.jpeg HTTP/1.1[0m" 304 -
-2023-03-07 19:58:15,105 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "[36mGET /static/icons/sac-logo.png HTTP/1.1[0m" 304 -
-2023-03-07 19:58:15,112 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "[33mGET /static/css/https%20//fonts.googleapis.com/css2%20family=roboto%20&display=swap HTTP/1.1[0m" 404 -
-2023-03-07 19:58:15,116 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "[36mGET /static/background/soccer_wallpaper.jpg HTTP/1.1[0m" 304 -
+2023-03-07 20:20:32,417 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-07 20:20:32,417 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-07 20:20:32,419 - INFO -  * Restarting with stat
+2023-03-07 20:20:32,492 - WARNING -  * Debugger is active!
+2023-03-07 20:20:32,496 - INFO -  * Debugger PIN: 923-504-274
+2023-03-07 20:21:05,283 - INFO - Failed login attempt at 2023-03-07 20:21:05 from IP address 127.0.0.1
+2023-03-07 20:21:05,287 - INFO - 127.0.0.1 - - [07/Mar/2023 20:21:05] "POST /login HTTP/1.1" 200 -
+2023-03-07 20:21:05,307 - INFO - 127.0.0.1 - - [07/Mar/2023 20:21:05] "[36mGET /static/css/header.css HTTP/1.1[0m" 304 -
+2023-03-07 20:21:05,309 - INFO - 127.0.0.1 - - [07/Mar/2023 20:21:05] "[36mGET /static/icons/youtube-logo.svg HTTP/1.1[0m" 304 -
+2023-03-07 20:21:05,309 - INFO - 127.0.0.1 - - [07/Mar/2023 20:21:05] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+2023-03-07 20:21:05,309 - INFO - 127.0.0.1 - - [07/Mar/2023 20:21:05] "[36mGET /static/icons/sac-logo.png HTTP/1.1[0m" 304 -
+2023-03-07 20:21:05,309 - INFO - 127.0.0.1 - - [07/Mar/2023 20:21:05] "[36mGET /static/icons/league-logo.jpeg HTTP/1.1[0m" 304 -
+2023-03-07 20:21:05,311 - INFO - 127.0.0.1 - - [07/Mar/2023 20:21:05] "[33mGET /static/css/https%20//fonts.googleapis.com/css2%20family=roboto%20&display=swap HTTP/1.1[0m" 404 -
+2023-03-07 20:21:05,314 - INFO - 127.0.0.1 - - [07/Mar/2023 20:21:05] "[36mGET /static/background/soccer_wallpaper.jpg HTTP/1.1[0m" 304 -
+2023-03-07 20:22:10,247 - INFO -  * Detected change in '/Users/chamarc1/Documents/SDEV_300/Week_8/Coach_Info/app.py', reloading
+2023-03-07 20:22:10,288 - INFO -  * Restarting with stat
+2023-03-07 20:23:27,408 - INFO - Failed login attempt at 2023-03-07 20:23:27 from IP address 127.0.0.1
+2023-03-07 20:23:27,411 - INFO - 127.0.0.1 - - [07/Mar/2023 20:23:27] "POST /login HTTP/1.1" 200 -
+2023-03-07 20:23:27,432 - INFO - 127.0.0.1 - - [07/Mar/2023 20:23:27] "[36mGET /static/icons/sac-logo.png HTTP/1.1[0m" 304 -
+2023-03-07 20:23:27,433 - INFO - 127.0.0.1 - - [07/Mar/2023 20:23:27] "[36mGET /static/css/header.css HTTP/1.1[0m" 304 -
+2023-03-07 20:23:27,434 - INFO - 127.0.0.1 - - [07/Mar/2023 20:23:27] "[36mGET /static/icons/youtube-logo.svg HTTP/1.1[0m" 304 -
+2023-03-07 20:23:27,434 - INFO - 127.0.0.1 - - [07/Mar/2023 20:23:27] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+2023-03-07 20:23:27,435 - INFO - 127.0.0.1 - - [07/Mar/2023 20:23:27] "[36mGET /static/icons/league-logo.jpeg HTTP/1.1[0m" 304 -
+2023-03-07 20:23:27,437 - INFO - 127.0.0.1 - - [07/Mar/2023 20:23:27] "[33mGET /static/css/https%20//fonts.googleapis.com/css2%20family=roboto%20&display=swap HTTP/1.1[0m" 404 -
+2023-03-07 20:23:27,440 - INFO - 127.0.0.1 - - [07/Mar/2023 20:23:27] "[36mGET /static/background/soccer_wallpaper.jpg HTTP/1.1[0m" 304 -

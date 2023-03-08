@@ -77,6 +77,7 @@ def login():
     return: render_template: login.html, name
     """
     name = "Charlemagne Marc"# set up logging
+    # set up log
     logging.basicConfig(filename='failed_logins.log', level=logging.INFO,
                         format='%(asctime)s - %(levelname)s - %(message)s')
     # check if user is already logged in
@@ -102,8 +103,8 @@ def login():
         # display error message
         error = 'Invalid username or password'
         # log failed login attempt with date and time
-        logging.info(f'Failed login attempt at {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}'\
-                     f' from IP address {request.remote_addr}')
+        logging.info('Failed login attempt at %s from IP address %s',
+                     datetime.now().strftime('%Y-%m-%d %H:%M:%S'), request.remote_addr)
         return render_template('login.html', error=error)
     # if form is not submitted, display login page
     return render_template('login.html', name=name)
@@ -115,17 +116,12 @@ def common(password):
     param: password: String
     return: Boolean: False if password's not in file, True if it is in file
     """
-    # open file
-    file = open('CommonPassword.txt', 'r')
-    
-    # for loop to iterate through each line in file
-    for line in file:
-        # check line against password, return True if password equals line
-        if line.strip() == password:
-            return True
-        
-    # close file
-    file.close()
+    with open('CommonPassword.txt', 'r', encoding='utf-8') as file:
+        # for loop to iterate through each line in file
+        for line in file:
+            # check line against password, return True if password equals line
+            if line.strip() == password:
+                return True
 
     # return False since password is not within common list
     return False
@@ -136,28 +132,29 @@ def valid_password(password):
     valid_password(password): checks to see if string is a valid password
     A password complexity should be enforced to include at least 12 characters in length, and
     include at least 1 uppercase character, 1 lowercase character, 1 number and 1 special character.
-    return: boolean: boolean on validicity of password
+    return: string if invalid, none if valid
     """
+    error = None
     # check for common
     if common(password):
-        return False, "easily guessed"
+        error = "easily guessed"
     # check for length
     if len(password) < 12:
-        return False, "too short"
+        error = "too short"
     # check for upper
     if not re.search(r"[A-Z]", password):
-        return False, "no uppercase characters"
+        error = "no uppercase characters"
     # check for lower
     if not re.search(r"[a-z]", password):
-        return False, "no lowercase characters"
+        error = "no lowercase characters"
     # check for digit
     if not re.search(r"\d", password):
-        return False, "no digits"
+        error = "no digits"
     # check for special
     if not re.search(r"[@_!#$%^&*()<>?/|}{~:]", password):
-        return False, "no special characters"
-    # return True since passes all conditions
-    return True
+        error = "no special characters"
+    # return error
+    return error
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -176,10 +173,10 @@ def register():
         username = request.form['username']
         password = request.form['password']
         # if password is not valid error message and redirect to registration
-        valid = valid_password(password)
-        if not valid[0]:
+        is_valid = valid_password(password)
+        if is_valid is not None:
             # display error message
-            error = 'password: ' + valid[1]
+            error = 'password: ' + is_valid
             return render_template('registration.html', error=error, name=name)
         # generate password hash
         password_hash = generate_password_hash(password)
@@ -198,6 +195,10 @@ def register():
 
 @app.route('/account', methods=['GET', 'POST'])
 def account():
+    """
+    account(): account page route
+    return: template render or redirect
+    """
     name = 'Charlemagne Marc'
     # check if user is logged in
     if 'user_id' not in session:
@@ -224,10 +225,10 @@ def account():
             error = 'new and confirm passwords do not match'
             return render_template('account.html', error=error, name=name, user_id=user_id)
         # check to see if new password is valid
-        valid = valid_password(new_password)
-        if not valid[0]:
+        is_valid = valid_password(new_password)
+        if is_valid is not None:
             # display error message
-            error = 'password: ' + valid[1]
+            error = 'password: ' + is_valid
             return render_template('account.html', error=error, name=name, user_id=user_id)
         # update password hash in database
         cur.execute('UPDATE users SET password_hash = ? WHERE id = ?',
@@ -238,7 +239,7 @@ def account():
         return render_template('account.html', success=success, name=name, user_id=user_id)
     # if form is not submitted, display base account page
     return render_template('account.html', name=name, user_id=user_id)
-        
+
 
 @app.route('/logout')
 def logout():
@@ -353,4 +354,4 @@ def admin():
 
 # run app
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
