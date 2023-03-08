@@ -1,0 +1,8 @@
+2023-03-07 19:58:15,078 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "GET /login HTTP/1.1" 200 -
+2023-03-07 19:58:15,104 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "[36mGET /static/css/header.css HTTP/1.1[0m" 304 -
+2023-03-07 19:58:15,104 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+2023-03-07 19:58:15,104 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "[36mGET /static/icons/youtube-logo.svg HTTP/1.1[0m" 304 -
+2023-03-07 19:58:15,104 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "[36mGET /static/icons/league-logo.jpeg HTTP/1.1[0m" 304 -
+2023-03-07 19:58:15,105 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "[36mGET /static/icons/sac-logo.png HTTP/1.1[0m" 304 -
+2023-03-07 19:58:15,112 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "[33mGET /static/css/https%20//fonts.googleapis.com/css2%20family=roboto%20&display=swap HTTP/1.1[0m" 404 -
+2023-03-07 19:58:15,116 - INFO - 127.0.0.1 - - [07/Mar/2023 19:58:15] "[36mGET /static/background/soccer_wallpaper.jpg HTTP/1.1[0m" 304 -
